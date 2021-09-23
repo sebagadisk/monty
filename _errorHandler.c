@@ -15,10 +15,16 @@ void _errorHandler(int prmErrorCode)
 		case SWAP_EMPTY_STACK:
 			printf("L%d: can't swap, stack empty\n", appData->lineNumber);
 			break;
+		case ADD_EMPTY_STACK:
+			printf("L%d: can't add, stack empty\n", appData->lineNumber);
+			break;
 		case SWAP_STACK_TOO_SHORT:
 			printf("L%d: can't swap, stack too short\n", appData->lineNumber);
 			break;
-		case MALLOC_FAILED:  
+		case ADD_STACK_TOO_SHORT:
+			printf("L%d: can't add, stack too short\n", appData->lineNumber);
+			break;
+		case MALLOC_FAILED:
 			printf("Error: malloc failed\n");
 			break;
 	}
