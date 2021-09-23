@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * _calloc - allocates memory for an array
  *
@@ -11,14 +10,12 @@
 void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 {
 	void *ptr;
-
 	if (prmNumber == 0 || prmSize == 0)
 		return (NULL);
-
 	ptr = malloc(prmSize * prmNumber);
 
 	if (ptr == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	ptr = _memset(ptr, 0, prmNumber * prmSize);
 

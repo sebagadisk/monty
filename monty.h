@@ -6,9 +6,20 @@
 #define INVALID_ARGUMENT_FORMAT 13
 #define EMPTY_STACK 14
 #define STACK_TOO_SHORT 15
+#define MALLOC_FAILED 16
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
+
+    
+          
+            
+    
+
+          
+    
+    
+  
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -86,5 +97,4 @@ char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
 char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
 void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
 int _wordNumber(char *prmString, char *prmSeparators);
-
 #endif
