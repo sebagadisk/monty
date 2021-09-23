@@ -1,60 +1,36 @@
+#ifndef MONTY_H
+#define MONTY_H
+#define INVALID_ARGUMENT_NUMBER 10
 #define INVALID_FILE 11
 #define INVALID_PARSING_ARGUMENT 12
+
 #define BUFFER_SIZE 1024
-#define OPCODE_COMMAND_SEPARATOR " "
+#define COMMAND_SEPARATOR " "
+
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-/**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
- *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO Holberton project
- */
-typedef struct stack_s
-{
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
-} stack_t;
-/**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
- */
-typedef struct instruction_s
-{
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
-
+@@ -48,6 +48,8 @@ typedef struct instruction_s
 typedef struct data_s
 {
 	char **arguments;
+	char *buffer;
+	stack_t *queue;
 } data_t;
 
 extern data_t *appData;
-
-void _addWord(char *prmWord, int *prmIndex, char **prmArray);
-int _atoi(char *prmString);
-@@ -65,14 +60,15 @@ int _checkSeparators(char prmChar, char *prmSeparators);
+@@ -59,12 +61,15 @@ int _checkEscapeSeparators(char prmChar, char *prmEscapeSeparators);
+int _checkSeparators(char prmChar, char *prmSeparators);
 char *_cleanString(char *prmString);
 void _errorHandler(int prmErrorCode);
+void _freeAppData();
 void _freeCharDoublePointer(char **prmPtr);
 void _freeStackList(stack_t *prmHeadNode);
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int);
 char *_getword(char *prmGlobal, int prmOffset, int prmSize);
 int _inArray(char prmChar, char *prmArray);
 int _isdigit(char prmChar);
+void _initAppData();
+int _isNumber(char *s);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
 void _push(stack_t **stack, unsigned int line_number);
