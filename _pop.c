@@ -1,12 +1,12 @@
 #include "monty.h"
-
 void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *tmp = *stack, *last = NULL;
 	int eraseHead = 0;
 
 	if (*stack == NULL)
-		_errorHandler(EMPTY_STACK);
+		_errorHandler(POP_EMPTY_STACK);
+
 	while(tmp != NULL)
 	{
 		last = tmp;
