@@ -19,18 +19,7 @@ int main(int prmArgc, char **prmArgv)
 		if (appData->buffer[0] == '\n')
 			continue;
 		appData->lineNumber++;
-		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);
-
-
-    
-          
-            
-    
-
-          
-    
-    
-  
+		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);  
 		if (appData->arguments == NULL)
 			_errorHandler(INVALID_PARSING_ARGUMENT);
 		func = _getCustomFunction(appData->arguments[0]);

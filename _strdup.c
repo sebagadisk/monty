@@ -20,15 +20,6 @@ char *_strdup(char *prmString)
 
 	for (cLoop = 0; cLoop < _strlen(prmString) + 1; cLoop++)
 		string[cLoop] = prmString[cLoop];
-
-    
-          
-            
-    
-
-          
-    
-    
   
 	return (string);
 }

@@ -10,16 +10,6 @@
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
-
-    
-          
-            
-    
-
-          
-    
-    
-  
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
