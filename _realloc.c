@@ -61,5 +61,4 @@ void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize)
   
 	return (s);
 }
-	return (s);
-}
+ 
