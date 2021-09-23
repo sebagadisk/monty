@@ -9,14 +9,14 @@
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 {
 	int i = 0;
-
 	instruction_t fp[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", _pint}
+		{"pint", _pint},
+		{"pop", _pop},
 	};
 
-	while (i < 3)
+	while (i < 4)
 	{
 		if (_strcmp(prmCommand, (fp + i)->opcode) == 0)
 			return ((fp + i)->f);
