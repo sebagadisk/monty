@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _isNumber - check if string is a number
  *

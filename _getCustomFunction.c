@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _getCustomFunction - check custom command
  *
@@ -6,9 +7,11 @@
  *
  * Return: pointer function
  */
+
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 {
 	int i = 0;
+
 	instruction_t fp[] = {
 		{"push", _push},
 		{"pall", _pall},
@@ -16,13 +19,25 @@ void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"pchar", _pchar},
+		{"mod", _mod},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{"pstr", _pstr},
+		{"nop", _nop},
+		{"queue", _queue},
+		{"stack", _stack}
 	};
 
-	while (i < 6)
+	while ((fp + i)->opcode)
 	{
-		if (_strcmp(prmCommand, (fp + i)->opcode) == 0)
+		if (strcmp(prmCommand, (fp + i)->opcode) == 0)
 			return ((fp + i)->f);
 		i++;
 	}
+
 	return (NULL);
 }

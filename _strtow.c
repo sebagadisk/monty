@@ -17,7 +17,7 @@ char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators)
 	if (prmString == NULL)
 		return (NULL);
 
-	size = _strlen(prmString);
+	size = strlen(prmString);
 	word_number = _wordNumber(prmString, prmSeparators);
 
 	if (prmString == NULL || !prmString || word_number == 0)
@@ -26,7 +26,7 @@ char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators)
 	words = _calloc(sizeof(char *), (word_number + 1));
 
 	if (words == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	for (cLoop = 0; cLoop <= size && cLoop1 < word_number; cLoop++)
 	{

@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _getword - returns word
  *
@@ -12,6 +13,7 @@ char *_getword(char *prmGlobal, int prmOffset, int prmSize)
 {
 	char *word;
 	int cLoop;
+
 	word = malloc(sizeof(char) * prmSize + 1);
 
 	if (word == NULL)
@@ -19,6 +21,8 @@ char *_getword(char *prmGlobal, int prmOffset, int prmSize)
 
 	for (cLoop = 0; cLoop < (prmSize); cLoop++)
 		word[cLoop] = prmGlobal[prmOffset + cLoop];
+
 	word[cLoop] = '\0';
+
 	return (word);
 }
